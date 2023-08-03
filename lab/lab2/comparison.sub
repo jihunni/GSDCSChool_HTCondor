@@ -1,0 +1,19 @@
+JobBatchName = comparison $(Cluster)
+executable = comparison.py
+universe = vanilla
+output = comparison_$(Process).out
+error = comparison_$(Process).err
+log   = submit.log
+
+## Sync environment variables
+getenv = True
+
+Arguments =  $(FASTA_FILE) human.fasta
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = $(FASTA_FILE),human.fasta
+#transfer_input_files    = human.fasta
+#transfer_output_files =  comparison_$(Process).out
+#transfer_output_files = comaprison.out
+#transfer_output_remaps = "comparison.out = comparison_$(Process).out"
+queue FASTA_FILE matching files *.fasta
