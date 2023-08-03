@@ -1,0 +1,10 @@
+JobBatchName = GroupX_Chapter2_SimpleSleep
+executable = data.sh
+universe = vanilla
+output = data.out
+error = tu2.log
+log   = tu2.log
+
+should_transfer_files   = yes
+when_to_transfer_output = ON_EXIT
+queue
